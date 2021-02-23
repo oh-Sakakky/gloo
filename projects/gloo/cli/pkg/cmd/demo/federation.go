@@ -18,7 +18,7 @@ func federation(opts *options.Options) *cobra.Command {
 		Short: constants.DEMO_FEDERATION_COMMAND.Short,
 		Long:  constants.DEMO_FEDERATION_COMMAND.Long,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			licenseKey := opts.Install.Federation.LicenseKey
+			licenseKey := opts.Install.LicenseKey
 			if licenseKey == "" {
 				return eris.New("please pass in a Gloo Federation license key (e.g. glooctl federation demo --license-key [license key])")
 			}
