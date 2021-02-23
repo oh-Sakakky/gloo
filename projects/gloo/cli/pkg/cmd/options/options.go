@@ -60,8 +60,8 @@ type HelmInstall struct {
 
 type Install struct {
 	HelmInstall
-	Knative    Knative
-	WithUi     bool
+	Knative Knative
+	WithUi  bool
 }
 
 type Knative struct {
