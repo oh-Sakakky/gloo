@@ -20,11 +20,11 @@ func glooFedCmd(opts *options.Options) *cobra.Command {
 		PreRun: setVerboseMode(opts),
 		RunE: func(cmd *cobra.Command, args []string) error {
 
+			opts.Install.HelmInstall = opts.Install.Federation.HelmInstall
+
 			extraValues := map[string]interface{}{
 				"license_key": opts.Install.LicenseKey,
 			}
-
-			opts.Install.HelmInstall = opts.Install.Federation.HelmInstall
 
 			if err := NewInstaller(DefaultHelmClient()).Install(&InstallerConfig{
 				InstallCliArgs: &opts.Install,
