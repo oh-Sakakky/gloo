@@ -60,13 +60,8 @@ type HelmInstall struct {
 
 type Install struct {
 	HelmInstall
-	Federation Federation
 	Knative    Knative
 	WithUi     bool
-}
-
-type Federation struct {
-	HelmInstall
 }
 
 type Knative struct {
